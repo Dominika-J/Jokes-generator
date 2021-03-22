@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,41 @@
     <link rel="stylesheet" href="./style.css">
     <title>Joke generator</title>
 </head>
+
 <body>
-    <div class="joke-container">
-        <h3>Jokes about programmers</h3>
-        <div id="joke" class="joke">There are gonna be jokes</div>
-        <button id="btn-another" class="btn-another">Generate joke</button>
-        <button id="btn-save" class="btn-save">Save</button>
-    </div>
-   
-    <div class="stored-jokes-container">
-        <button id="delete" class="btn-delete">delete</button>
+    <div class="container">
+        <div class="columns">
+
+            <!-- stored jokes -->
+            <div class="container-stored-jokes"> columns left
+                <div class="one-stored-joke"> joke item
+                    <p class="stored-joke">"there are gonna be your stored jokes"</p> joke text
+                    <button id="btn-delete" class="btn-delete">delete</button>
+                </div>
+                <div class="one-stored-joke">
+                    <p class="stored-joke">"there are gonna be your stored jokes"</p>
+                    <button id="btn-delete" class="btn-delete">delete</button>
+                </div>
+                <div class="one-stored-joke">
+                    <p class="stored-joke">"there are gonna be your stored jokes"</p>
+                    <button id="btn-delete" class="btn-delete">delete</button>
+                </div>
+
+            </div>
+
+            <!-- new jokes -->
+            <div class="container-new-joke"> columns right
+                <div class="container-new"> joke new
+                    <h3>Jokes about programmers</h3>
+                    <div id="joke" class="joke">There are gonna be jokes</div> joke new text
+                </div>
+                <button id="btn-another" class="btn-another">Generate joke</button>
+                <button id="btn-save" class="btn-save">Save</button>
+            </div>
+        </div>
+
+
     </div>
 </body>
+
 </html>
