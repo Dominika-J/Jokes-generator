@@ -47,14 +47,14 @@ h3 {
   flex-wrap: wrap;
 }
 
-.container-stored-jokes {
+.columns-left {
   border: 4px solid yellow;
   position: relative;
   width: 30%;
   min-height: 100vh;
 }
 
-.container-new-joke {
+.columns-right {
   border: 4px solid blue;
   position: relative;
   width: 70%;
@@ -64,11 +64,11 @@ h3 {
   flex-flow: column;
 }
 
-.container-new {
+.joke-new {
     background-color: white;
     text-align: center;
 }
 
-.joke {
+.joke-new-text {
     font-size: 50px;
-}
+} 

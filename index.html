@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" type="module" defer></script>
     <title>Joke generator</title>
 </head>
 
@@ -14,27 +15,27 @@
         <div class="columns">
 
             <!-- stored jokes -->
-            <div class="container-stored-jokes"> columns left
-                <div class="one-stored-joke"> joke item
-                    <p class="stored-joke">"there are gonna be your stored jokes"</p> joke text
+            <div class="columns-left"> 
+                <div class="joke-item"> 
+                    <p class="joke-text">"there are gonna be your stored jokes"</p> 
                     <button id="btn-delete" class="btn-delete">delete</button>
                 </div>
-                <div class="one-stored-joke">
-                    <p class="stored-joke">"there are gonna be your stored jokes"</p>
+                <div class="joke-item">
+                    <p class="joke-text">"there are gonna be your stored jokes"</p>
                     <button id="btn-delete" class="btn-delete">delete</button>
                 </div>
-                <div class="one-stored-joke">
-                    <p class="stored-joke">"there are gonna be your stored jokes"</p>
+                <div class="joke-item">
+                    <p class="joke-text">"there are gonna be your stored jokes"</p>
                     <button id="btn-delete" class="btn-delete">delete</button>
                 </div>
 
             </div>
 
             <!-- new jokes -->
-            <div class="container-new-joke"> columns right
-                <div class="container-new"> joke new
+            <div class="columns-right"> 
+                <div class="joke-new"> 
                     <h3>Jokes about programmers</h3>
-                    <div id="joke" class="joke">There are gonna be jokes</div> joke new text
+                    <div id="joke-new-text" class="joke-new-text"></div> 
                 </div>
                 <button id="btn-another" class="btn-another">Generate joke</button>
                 <button id="btn-save" class="btn-save">Save</button>
