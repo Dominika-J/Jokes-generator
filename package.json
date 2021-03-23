@@ -1,0 +1,25 @@
+{
+  "name": "random-joke",
+  "version": "1.0.0",
+  "description": "random joke generator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dominika-J/Jokes-generator.git"
+  },
+  "keywords": [
+    "joke",
+    "joke-generator",
+    "jokes"
+  ],
+  "author": "dominika.jansova1011@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dominika-J/Jokes-generator/issues"
+  },
+  "homepage": "https://github.com/Dominika-J/Jokes-generator#readme",
+  "dependencies": {}
+}

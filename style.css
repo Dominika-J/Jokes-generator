@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  border: 4px solid brown;
+  background: url(./img/joker.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Lato, sans-serif;
+}
+
+body::after {
+  content: "";
+  background: black;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+p {
+    color: white;
+    font-size: 16px;
+}
+
+h3 {
+    color: black;
+    font-size: 23px;
+}
+
+.container {
+  margin: 20px;
+}
+
+.columns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.columns-left {
+  border: 4px solid yellow;
+  position: relative;
+  width: 30%;
+  min-height: 100vh;
+}
+
+.columns-right {
+  border: 4px solid blue;
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.joke-new {
+    background-color: white;
+    text-align: center;
+}
+
+.joke-new-text {
+    font-size: 50px;
+} 
