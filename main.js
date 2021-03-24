@@ -23,7 +23,7 @@ $getJoke.onclick = getJoke;
 // add joke
 $saveJoke.addEventListener("click", saveJoke);
 
-function saveJoke(event) {
+function saveJoke() {
   const $jokeItem = document.createElement("div");
   $jokeItem.classList.add("joke-item");
 
@@ -38,15 +38,18 @@ function saveJoke(event) {
   $jokeItem.appendChild($jokeDelete);
 
   $columnsLeft.appendChild($jokeItem);
+
+  $jokeDelete.addEventListener("click", deleteJoke);
+
 }
 
 // delete joke
+function deleteJoke(e) {
+    const item = e.target;
+    if(item.classList[0] === "btn-delete") {
+        const $jokeItem = item.parentElement;
+        $jokeItem.remove();
+    }
+}
 
-// function deleteJoke() {
-//     const $jokeItem = document.getElementById('joke-item');
-//     const parent = $jokeItem.parentNode;
-//     parent.removeChild($jokeItem);
-//     console.log('should be removed')
-// }
-
-// $jokeDelete.onclick = deleteJoke;
+// 
