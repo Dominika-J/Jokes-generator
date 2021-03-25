@@ -98,6 +98,10 @@ async function fetchJokeById(jokeId) {
     },
   });
   const joke = await jokeResponse.json();
+
+
+//save this joke here!!!!!!!!!!!!!!!!!!!!
+
 }
 
 const jokeIds = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
