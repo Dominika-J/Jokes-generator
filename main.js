@@ -57,8 +57,6 @@ $jokeDelete.addEventListener("click", deleteJoke); // eventListener
 
 }
 
-
-
 // delete joke
 
 function deleteJoke(e) {
@@ -91,3 +89,21 @@ function getCookie(cName) {
     return res;
 }
 
+// fetch joke
+
+async function fetchJokeById(jokeId) {
+  const jokeResponse = await fetch(`https://icanhazdadjoke.com/j/${jokeId}`, {
+    headers: {
+      Accept: "application/json",
+    },
+  });
+  const joke = await jokeResponse.json();
+}
+
+const jokeIds = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
+
+// jokeIds.forEach(id => {
+//   fetchJokeById(id)
+// });
+
+jokeIds.forEach(fetchJokeById);
