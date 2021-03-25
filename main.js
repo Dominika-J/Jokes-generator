@@ -25,26 +25,39 @@ $getJoke.onclick = getJoke;
 $saveJoke.addEventListener("click", saveJoke);
 
 function saveJoke() {
-  const $jokeItem = document.createElement("div");
+  const $jokeItem = document.createElement("div"); // created div 
   $jokeItem.classList.add("joke-item");
 
-  const $jokeText = document.createElement("p");
+  const $jokeText = document.createElement("p"); // created p
   $jokeText.innerText = $newJoke.innerText;
   $jokeText.classList.add("joke-text");
   $jokeItem.appendChild($jokeText);
 
-  const $jokeDelete = document.createElement("button");
+  const $jokeDelete = document.createElement("button"); // created button
   $jokeDelete.innerHTML = "delete";
   $jokeDelete.classList.add("btn-delete");
   $jokeItem.appendChild($jokeDelete);
 
   $columnsLeft.appendChild($jokeItem);
 
-  $jokeDelete.addEventListener("click", deleteJoke);
+  const newJokeId = $newJoke.dataset.jokeId;
+  const myCurrentJokeId = getCookie('jokeIds');
+  setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100);
 
+  $jokeDelete.addEventListener("click", deleteJoke); // eventListener
 }
 
+// const newJokeId = $newJoke.dataset.jokeId;
+// const myCurrentCookiesArr = getCookie('jokeIds').split(',');
+
+// myCurrentCookiesArr.push(newJokeId);
+
+// setCookie('jokeIds', myCurrentCookiesArr.join());
+// console.log(myCurrentCookiesArr);
+
+
 // delete joke
+
 function deleteJoke(e) {
     const item = e.target;
     if(item.classList[0] === "btn-delete") {
@@ -53,7 +66,7 @@ function deleteJoke(e) {
     }
 }
 
-// save jokes into cookies
+// set jokes into cookies
 
 function setCookie(cName, cValue, expDays) {
     let date = new Date();
@@ -61,6 +74,8 @@ function setCookie(cName, cValue, expDays) {
     const expires = "expires=" + date.toUTCString();
     document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 }
+
+// get jokes into cookies
 
 function getCookie(cName) {
     const name = cName + "=";
