@@ -44,8 +44,6 @@ function saveJoke() {
   const myCurrentJokeId = getCookie('jokeIds');
   setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100);
 
-  $jokeDelete.addEventListener("click", deleteJoke); // eventListener
-}
 
 // const newJokeId = $newJoke.dataset.jokeId;
 // const myCurrentCookiesArr = getCookie('jokeIds').split(',');
@@ -54,6 +52,11 @@ function saveJoke() {
 
 // setCookie('jokeIds', myCurrentCookiesArr.join());
 // console.log(myCurrentCookiesArr);
+
+$jokeDelete.addEventListener("click", deleteJoke); // eventListener
+
+}
+
 
 
 // delete joke
