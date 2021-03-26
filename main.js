@@ -99,6 +99,7 @@ async function fetchJokeById(jokeId) {
   });
   const joke = await jokeResponse.json();
 
+  console.log(joke);
 
 //save this joke here!!!!!!!!!!!!!!!!!!!!
 
