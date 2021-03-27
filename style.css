@@ -6,39 +6,17 @@
 }
 
 body {
-  /* background: url(./img/joker.jpg) no-repeat center; */
-  /* background-size: cover; */
-  min-height: 100vh;
   overflow: hidden;
   font-family: Lato, sans-serif;
 }
 
-body::after {
-  content: "";
-  background: black;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;
-}
-
-p {
-    color: white;
-    font-size: 16px;
-}
-
 h3 {
-    color: black;
-    font-size: 23px;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.container {
-  margin: 20px;
+  color: white;
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
+  margin-top: -10%;
 }
 
 .columns {
@@ -52,33 +30,37 @@ h3 {
   position: relative;
   width: 30%;
   min-height: 100vh;
+  background-color: rgb(200, 238, 245);
 }
 
 .columns-right {
-  background-color: rgb(149,255,255);
   position: relative;
+  background-color: #ff7700;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  
 }
 
 .joke-new {
-    background-color: rgba(3, 34, 73, 0.431);
-    border-radius: 10px;
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
-    max-width: 800px;
+  background-color: rgba(3, 34, 73, 0.431);
+  border-radius: 10px;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  margin: 0px 45px;
 }
 
 .joke-new-text {
-    font-size: 30px;
-    padding: 20px;
-    line-height: 40px;
-} 
+  font-size: 30px;
+  padding: 20px;
+  line-height: 40px;
+}
 
 .buttons {
   display: flex;
@@ -86,14 +68,19 @@ h3 {
 }
 
 .btn {
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
+  color: white;
+  border-radius: 10px;
+  font-size: 17px;
+  border-style: none;
+  cursor: pointer;
 }
 
 .btn-another {
-  background-color: rgb(240,123,66);
+  background-color: rgb(240, 123, 66);
 }
 
 .btn-save {
-  background-color: rgb(3,34,73);
+  background-color: rgb(3, 34, 73);
 }
