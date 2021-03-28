@@ -6,6 +6,7 @@
 }
 
 body {
+  height: 100vh;
   overflow: hidden;
   font-family: Lato, sans-serif;
 }
@@ -26,8 +27,25 @@ h3 {
 .columns-left {
   /* position: relative; */
   width: 30%;
-  min-height: 100vh;
-  background-color: rgb(200, 238, 245);
+  background-color: rgb(171, 221, 230);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+h4 {
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+  margin: 10% 0;
+  text-align: center;
+}
+
+.joke-item {
+  background-color: rgba(3, 34, 73, 0.431);
+  margin: 10%;
+  padding: 10%;
+  border-radius: 10px;
+
 }
 
 .columns-right {
