@@ -34,7 +34,7 @@ function saveJoke() {
   $jokeItem.appendChild($jokeText);
 
   const $jokeDelete = document.createElement("button"); // created button
-  $jokeDelete.innerHTML = "delete";
+  $jokeDelete.innerHTML = "Delete";
   $jokeDelete.classList.add("btn-delete");
   $jokeItem.appendChild($jokeDelete);
 
