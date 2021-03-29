@@ -15,7 +15,7 @@
   --generate--button:  rgb(240, 123, 66);
   --generate--button--hover:  rgb(253, 100, 23);
   --delete--button: rgba(3, 34, 73);
-  --delete--button--hover:  rgb(104, 104, 104);
+  --delete--button--hover:  rgb(2, 45, 97);
 }
 
 body {
@@ -142,7 +142,7 @@ h4 {
 }
 
 .fa {
-  font-size: 16px;
+  font-size: 13px;
   padding-left: 5px;
 }
 

@@ -36,6 +36,10 @@ function saveJoke() {
   const $jokeDelete = document.createElement("button"); // created button
   $jokeDelete.innerHTML = "Delete";
   $jokeDelete.classList.add("btn-delete");
+  const $jokeTrash = document.createElement("i");
+  $jokeTrash.className = "far fa-trash-alt fa"; 
+
+  $jokeDelete.appendChild($jokeTrash);
   $jokeItem.appendChild($jokeDelete);
 
   $columnsLeft.appendChild($jokeItem);
