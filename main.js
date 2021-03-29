@@ -44,7 +44,7 @@ function saveJoke() {
   const myCurrentJokeId = getCookie('jokeIds');
   setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100);
 
-
+  
 // const newJokeId = $newJoke.dataset.jokeId;
 // const myCurrentCookiesArr = getCookie('jokeIds').split(',');
 
