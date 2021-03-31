@@ -19,17 +19,34 @@ async function getJoke() {
   $newJoke.dataset.jokeId= joke.id; // ulozeni data jokeId do elementu
 }
 
+// const newJokeId = $newJoke.dataset.jokeId;
+// const myCurrentCookiesArr = getCookie('jokeIds').split(',');
+
+// myCurrentCookiesArr.push(newJokeId);
+
+// setCookie('jokeIds', myCurrentCookiesArr.join());
+// console.log(myCurrentCookiesArr);
+
+
 $getJoke.onclick = getJoke;
 
 // add joke
-$saveJoke.addEventListener("click", saveJoke);
+$saveJoke.addEventListener("click", () => {
+  saveJoke();
+  const newJokeId = $newJoke.dataset.jokeId;
+  console.log(newJokeId);
+  const myCurrentJokeId = getCookie('jokeIds');
+  setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100); 
+});
+
+console.log(getCookie('jokeIds'));
 
 function saveJoke() {
   const $jokeItem = document.createElement("div"); // created div 
   $jokeItem.classList.add("joke-item");
 
   const $jokeText = document.createElement("p"); // created p
-  $jokeText.innerText = $newJoke.innerText;
+  $jokeText.innerText = $newJoke.innerText; //parametr
   $jokeText.classList.add("joke-text");
   $jokeItem.appendChild($jokeText);
 
@@ -41,25 +58,12 @@ function saveJoke() {
 
   $jokeDelete.appendChild($jokeTrash);
   $jokeItem.appendChild($jokeDelete);
-
   $columnsLeft.appendChild($jokeItem);
 
-  const newJokeId = $newJoke.dataset.jokeId;
-  const myCurrentJokeId = getCookie('jokeIds');
-  setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100);
-
-  
-// const newJokeId = $newJoke.dataset.jokeId;
-// const myCurrentCookiesArr = getCookie('jokeIds').split(',');
-
-// myCurrentCookiesArr.push(newJokeId);
-
-// setCookie('jokeIds', myCurrentCookiesArr.join());
-// console.log(myCurrentCookiesArr);
-
-$jokeDelete.addEventListener("click", deleteJoke); // eventListener
+  $jokeDelete.addEventListener("click", deleteJoke); // eventListener
 
 }
+
 
 // delete joke
 
@@ -104,15 +108,11 @@ async function fetchJokeById(jokeId) {
   const joke = await jokeResponse.json();
 
   console.log(joke);
-
-//save this joke here!!!!!!!!!!!!!!!!!!!!
-
 }
 
 const jokeIds = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
+jokeIds.forEach(fetchJokeById);
 
 // jokeIds.forEach(id => {
 //   fetchJokeById(id)
 // });
-
-jokeIds.forEach(fetchJokeById);
