@@ -1,5 +1,5 @@
 import { setCookie, getCookie } from './cookies.js'
-import { saveJoke, deleteJoke } from './jokes.js'
+import { saveJoke } from './jokes.js'
 
 const $newJoke = document.getElementById("joke-new-text");
 const $getJoke = document.getElementById("btn-another");

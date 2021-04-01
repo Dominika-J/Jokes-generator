@@ -1,4 +1,5 @@
 const $columnsLeft = document.getElementById("columns-left");
+const $newJoke = document.getElementById("joke-new-text");
 
 
 // create joke
