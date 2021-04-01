@@ -1,15 +1,13 @@
-const $columnsLeft = document.getElementById("columns-left");
-const $newJoke = document.getElementById("joke-new-text");
-
+import { $columnsLeft } from './elements.js'
 
 // create joke
 
-export function saveJoke() {
+export function saveJoke(jokeText) {
     const $jokeItem = document.createElement("div"); // created div 
     $jokeItem.classList.add("joke-item");
   
     const $jokeText = document.createElement("p"); // created p
-    $jokeText.innerText = $newJoke.innerText; //parametr
+    $jokeText.innerText = jokeText; //parametr
     $jokeText.classList.add("joke-text");
     $jokeItem.appendChild($jokeText);
   

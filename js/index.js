@@ -1,11 +1,6 @@
 import { setCookie, getCookie } from './cookies.js'
 import { saveJoke } from './jokes.js'
-
-const $newJoke = document.getElementById("joke-new-text");
-const $getJoke = document.getElementById("btn-another");
-const $saveJoke = document.getElementById("btn-save");
-
-
+import { $newJoke, $getJoke, $saveJoke } from './elements.js'
 // get joke API
 
 getJoke();
@@ -26,7 +21,7 @@ $getJoke.onclick = getJoke;
 // add joke
 
 $saveJoke.addEventListener("click", () => {
-  saveJoke();
+  saveJoke($newJoke.innerText);
   const newJokeId = $newJoke.dataset.jokeId;
   console.log(newJokeId);
   const myCurrentJokeId = getCookie('jokeIds');
@@ -44,6 +39,8 @@ async function fetchJokeById(jokeId) {
     },
   });
   const joke = await jokeResponse.json();
+  
+  saveJoke(joke.joke);
 
   console.log(joke);
 }
@@ -54,3 +51,4 @@ jokeIds.forEach(fetchJokeById);
 // jokeIds.forEach(id => {
 //   fetchJokeById(id)
 // });
+
