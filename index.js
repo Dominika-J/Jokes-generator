@@ -1,8 +1,11 @@
+import { setCookie, getCookie } from './cookies.js'
+
 const $newJoke = document.getElementById("joke-new-text");
 const $columnsLeft = document.getElementById("columns-left");
 
 const $getJoke = document.getElementById("btn-another");
 const $saveJoke = document.getElementById("btn-save");
+
 
 // get joke API
 
@@ -19,18 +22,10 @@ async function getJoke() {
   $newJoke.dataset.jokeId= joke.id; // ulozeni data jokeId do elementu
 }
 
-// const newJokeId = $newJoke.dataset.jokeId;
-// const myCurrentCookiesArr = getCookie('jokeIds').split(',');
-
-// myCurrentCookiesArr.push(newJokeId);
-
-// setCookie('jokeIds', myCurrentCookiesArr.join());
-// console.log(myCurrentCookiesArr);
-
-
 $getJoke.onclick = getJoke;
 
 // add joke
+
 $saveJoke.addEventListener("click", () => {
   saveJoke();
   const newJokeId = $newJoke.dataset.jokeId;
@@ -40,6 +35,8 @@ $saveJoke.addEventListener("click", () => {
 });
 
 console.log(getCookie('jokeIds'));
+
+// create joke
 
 function saveJoke() {
   const $jokeItem = document.createElement("div"); // created div 
@@ -53,17 +50,15 @@ function saveJoke() {
   const $jokeDelete = document.createElement("button"); // created button
   $jokeDelete.innerHTML = "Delete";
   $jokeDelete.classList.add("btn-delete");
-  const $jokeTrash = document.createElement("i");
+  const $jokeTrash = document.createElement("i"); // created button icon
   $jokeTrash.className = "far fa-trash-alt fa"; 
 
   $jokeDelete.appendChild($jokeTrash);
   $jokeItem.appendChild($jokeDelete);
   $columnsLeft.appendChild($jokeItem);
 
-  $jokeDelete.addEventListener("click", deleteJoke); // eventListener
-
+  $jokeDelete.addEventListener("click", deleteJoke); 
 }
-
 
 // delete joke
 
@@ -73,28 +68,6 @@ function deleteJoke(e) {
         const $jokeItem = item.parentElement;
         $jokeItem.remove();
     }
-}
-
-// set jokes into cookies
-
-function setCookie(cName, cValue, expDays) {
-    let date = new Date();
-    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
-}
-
-// get jokes into cookies
-
-function getCookie(cName) {
-    const name = cName + "=";
-    const cDecoded = decodeURIComponent(document.cookie); //to be careful
-    const cArr = cDecoded .split('; ');
-    let res;
-    cArr.forEach(val => {
-        if (val.indexOf(name) === 0) res = val.substring(name.length);
-    })
-    return res;
 }
 
 // fetch joke
