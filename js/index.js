@@ -21,9 +21,8 @@ $getJoke.onclick = getJoke;
 // add joke
 
 $saveJoke.addEventListener("click", () => {
-  saveJoke($newJoke.innerText);
   const newJokeId = $newJoke.dataset.jokeId;
-  console.log(newJokeId);
+  saveJoke($newJoke.innerText, newJokeId);
   const myCurrentJokeId = getCookie('jokeIds');
   setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100); 
 });
@@ -40,7 +39,7 @@ async function fetchJokeById(jokeId) {
   });
   const joke = await jokeResponse.json();
   
-  saveJoke(joke.joke);
+  saveJoke(joke.joke, joke.id);
 
   console.log(joke);
 }

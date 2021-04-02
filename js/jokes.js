@@ -2,7 +2,7 @@ import { $columnsLeft } from './elements.js'
 
 // create joke
 
-export function saveJoke(jokeText) {
+export function saveJoke(jokeText, jokeId) {
     const $jokeItem = document.createElement("div"); // created div 
     $jokeItem.classList.add("joke-item");
   
@@ -21,7 +21,8 @@ export function saveJoke(jokeText) {
     $jokeItem.appendChild($jokeDelete);
     $columnsLeft.appendChild($jokeItem);
   
-    $jokeDelete.addEventListener("click", deleteJoke); 
+    $jokeDelete.addEventListener("click", deleteJoke);
+    console.log(jokeId);
   }
   
   // delete joke
@@ -33,3 +34,5 @@ export function saveJoke(jokeText) {
           $jokeItem.remove();
       }
   }
+
+  
