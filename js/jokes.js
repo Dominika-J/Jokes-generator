@@ -1,4 +1,5 @@
 import { $columnsLeft } from "./elements.js";
+import { setCookie, getCookie } from './cookies.js'
 
 // create joke
 
@@ -23,7 +24,6 @@ export function saveJoke(jokeText, jokeId) {
   $columnsLeft.appendChild($jokeItem);
 
   $jokeDelete.addEventListener("click", deleteJoke);
-  console.log(jokeId);
 }
 
 // delete joke
@@ -32,13 +32,19 @@ export function deleteJoke(event) {
   const $clickedElement = event.target;
   if ($clickedElement.classList[0] === "btn-delete") {
     const $jokeItem = $clickedElement.parentElement;
+
     const jokeId = $jokeItem.dataset.jokeId;
+    let myCurrentJokeId = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');; 
+    console.log(jokeId);
+    // debugger;
+    
+    console.log('before',myCurrentJokeId);  
+     
+    myCurrentJokeId = myCurrentJokeId.filter(cookie => cookie !== jokeId).join(',');
+    setCookie('jokeIds', myCurrentJokeId, 100);
+
     $jokeItem.remove();
   }
 }
-//pred smazanim
-// TvzdxXSCdFd,L6UnyP7Unyd,dasdafsf
 
-//po smazani vtipu L6UnyP7Unyd
-// TvzdxXSCdFd,dasdafsf
 

@@ -25,9 +25,11 @@ $saveJoke.addEventListener("click", () => {
   saveJoke($newJoke.innerText, newJokeId);
   const myCurrentJokeId = getCookie('jokeIds');
   setCookie('jokeIds',newJokeId + ',' + myCurrentJokeId, 100); 
+
+  console.log(myCurrentJokeId);
+
 });
 
-console.log(getCookie('jokeIds'));
 
 // fetch joke
 
@@ -41,8 +43,10 @@ async function fetchJokeById(jokeId) {
   
   saveJoke(joke.joke, joke.id);
 
-  console.log(joke);
 }
+
+
+// vytvoř funkci getSavedJokeIds, která vrátí jokeIds
 
 const jokeIds = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
 jokeIds.forEach(fetchJokeById);
