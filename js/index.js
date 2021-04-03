@@ -1,20 +1,8 @@
 import { setCookie, getCookie } from './cookies.js'
-import { saveJoke } from './jokes.js'
+import { saveJoke, fetchJokeById, fetchRandomJoke, getSavedJokeIds } from './jokes.js'
 import { $newJoke, $getJoke, $saveJoke } from './elements.js'
-// get joke API
 
 fetchRandomJoke();
-
-async function fetchRandomJoke() {
-  const jokeResponse = await fetch("https://icanhazdadjoke.com/", {
-    headers: {
-      Accept: "application/json",
-    },
-  });
-  const joke = await jokeResponse.json();
-  $newJoke.innerHTML = joke.joke;
-  $newJoke.dataset.jokeId= joke.id; // ulozeni data jokeId do elementu
-}
 
 $getJoke.onclick = fetchRandomJoke;
 
@@ -29,25 +17,6 @@ $saveJoke.addEventListener("click", () => {
   console.log(myCurrentJokeId);
 
 });
-
-
-// fetch joke
-
-async function fetchJokeById(jokeId) {
-  const jokeResponse = await fetch(`https://icanhazdadjoke.com/j/${jokeId}`, {
-    headers: {
-      Accept: "application/json",
-    },
-  });
-  const joke = await jokeResponse.json();
-  
-  saveJoke(joke.joke, joke.id);
-
-}
-
-export const getSavedJokeIds = () => {
-  return getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
-}
 
 const jokeIds = getSavedJokeIds();
 jokeIds.forEach(fetchJokeById);
