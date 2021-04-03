@@ -71,6 +71,7 @@ export const getSavedJokeIds = () => {
 };
 
 // get joke API
+
 export async function fetchRandomJoke() {
   const jokeResponse = await fetch("https://icanhazdadjoke.com/", {
     headers: {
@@ -81,3 +82,4 @@ export async function fetchRandomJoke() {
   $newJoke.innerHTML = joke.joke;
   $newJoke.dataset.jokeId = joke.id; // ulozeni data jokeId do elementu
 }
+ 
