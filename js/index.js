@@ -3,9 +3,9 @@ import { saveJoke } from './jokes.js'
 import { $newJoke, $getJoke, $saveJoke } from './elements.js'
 // get joke API
 
-getJoke();
+fetchRandomJoke();
 
-async function getJoke() {
+async function fetchRandomJoke() {
   const jokeResponse = await fetch("https://icanhazdadjoke.com/", {
     headers: {
       Accept: "application/json",
@@ -16,7 +16,7 @@ async function getJoke() {
   $newJoke.dataset.jokeId= joke.id; // ulozeni data jokeId do elementu
 }
 
-$getJoke.onclick = getJoke;
+$getJoke.onclick = fetchRandomJoke;
 
 // add joke
 
@@ -45,10 +45,11 @@ async function fetchJokeById(jokeId) {
 
 }
 
+export const getSavedJokeIds = () => {
+  return getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
+}
 
-// vytvoř funkci getSavedJokeIds, která vrátí jokeIds
-
-const jokeIds = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');
+const jokeIds = getSavedJokeIds();
 jokeIds.forEach(fetchJokeById);
 
 // jokeIds.forEach(id => {

@@ -1,5 +1,6 @@
 import { $columnsLeft } from "./elements.js";
 import { setCookie, getCookie } from './cookies.js'
+import { getSavedJokeIds } from './index.js'
 
 // create joke
 
@@ -34,7 +35,7 @@ export function deleteJoke(event) {
     const $jokeItem = $clickedElement.parentElement;
 
     const jokeId = $jokeItem.dataset.jokeId;
-    let myCurrentJokeId = getCookie('jokeIds').split(',').filter(id => id && id !== 'undefined');; 
+    let myCurrentJokeId = getSavedJokeIds();
     console.log(jokeId);
     // debugger;
     
