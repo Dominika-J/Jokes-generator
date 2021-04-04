@@ -24,4 +24,3 @@ jokeIds.forEach(fetchJokeById);
 // jokeIds.forEach(id => {
 //   fetchJokeById(id)
 // });
-

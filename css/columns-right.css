@@ -1,0 +1,65 @@
+.columns-right {
+    background-color: var(--right--background);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+  
+  .joke-new {
+    background-color: var(--left--joke--background);
+    border-radius: 10px;
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--text);
+    max-width: 80%;
+    margin: 0px 45px;
+  }
+  
+  .joke-new-text {
+    font-size: 25px;
+    padding: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+  }
+  
+  .buttons {
+    margin-top: 5%;
+  }
+  
+  .btn {
+    font-family: lato;
+    padding: 15px;
+    margin: 10px;
+    color: var(--text);
+    border-radius: 10px;
+    font-size: 16px;
+    border-style: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .btn-another {
+    background-color: var(--generate--button);
+  }
+  
+  .btn-another:hover {
+    background-color: var(--generate--button--hover);
+  }
+  
+  .btn-save {
+    background-color: var(--save--button);
+  }
+  
+  .btn-save:hover {
+    background-color: var(--save--button--hover);
+  }
+  
+  .fa {
+    font-size: 13px;
+    padding-left: 5px;
+  }
